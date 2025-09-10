@@ -1,0 +1,17 @@
+#include <iostream>
+#include <sstream>
+#include <iomanip>
+
+using namespace std;
+
+void swapped(int& a, int& b) {
+    swap(a, b);
+    cout << a << " " << b;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b;
+    cin >> a >> b;
+    swapped(a, b);
+}
