@@ -1,0 +1,39 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <cstring>
+
+using namespace std;
+
+bool reverseArray(const char* num, const char* arr) {
+    size_t len1 = strlen(num);
+    size_t len2 = strlen(arr);
+
+    if (len2 > len1) {
+        return false;
+    }
+
+    for (size_t i = 0; i <= len1 - len2; i++) {
+        bool match = true;
+        for (size_t j = 0; j < len2; j++) {
+            if (num[i + j] != arr[j]) {
+                match = false;
+                break;
+            }
+        }
+        if (match) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    const char* a = "Hello world";
+    const char* b = "wor";
+    const char* c = "banana";
+    
+    std::cout << std::boolalpha;
+    std::cout << reverseArray(a, b) << " " << reverseArray(a, c) << std::endl;
+}
